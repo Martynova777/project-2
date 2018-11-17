@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SLIDELIST</title>
+</head>
+<body>
+    <style>
+    </style>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="list">Сливы</div>
+<div class="list">Яблоки</div>
+<div class="list">Апельсины</div>
+<div class="button">Показать еще</div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+  var list = $(".list");
+  var button = $(".button");
+
+  //$(list.splice(5)).hide(); возвращает в виде массива . нативный метод джава скрипта
+
+  list.slice(5).hide(); // метод из jqweri возвращает коллекцию из элементов аналогично splice только с ними можно сразу работать
+
+  button.on("click", function() {
+  list.slice(5).slideToggle();
+  if(button.html() == "Показать еще") {
+            button.html("Скрыть")
+            }
+        else 
+            {
+            button.html("Показать еще")
+    }
+})
+</script>
+</body>
+</html>
